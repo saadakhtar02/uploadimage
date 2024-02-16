@@ -1,0 +1,328 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ------------------------------ Styling for the rest of the page ------------------------------ */
+body {
+    font-family: Roboto, sans-serif;
+}
+
+/* === removing default button style ===*/
+.buttonpma {
+    margin: 80px 0px;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    animation: r1 3s ease-in-out infinite;
+    /*linear*/
+    border: 7px #056bfa21 solid;
+    border-radius: 14px;
+}
+
+/* button styling */
+.buttonpma {
+    --border-right: 6px;
+    --text-stroke-color: rgba(85, 87, 255, 0.78);
+    --animation-color: #056bfa;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 1.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+    animation: r2 2s ease-in-out infinite;
+}
+
+/* hover */
+.buttonpma:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 70px var(--animation-color))
+}
+
+@keyframes r1 {
+    50% {
+        transform: rotate(-1deg) rotateZ(-10deg);
+    }
+}
+
+@keyframes r2 {
+    50% {
+        transform: rotateX(-65deg);
+    }
+}
+
+/* ==== GENERAL STYLES ==== */
+
+* {
+    box-sizing: border-box;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* ==== SIMPLE FOOTER ==== */
+
+footer {
+    bottom: 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.wrapper1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+footer small {
+    color: #ccc;
+    letter-spacing: .025rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.footer-nav a {
+    color: #c74f78;
+    text-decoration: none;
+    margin: 0 .5rem;
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #f26896;
+    transition: color .15s ease-in-out;
+}
+
+#main {
+    border-right: 3px solid #056bfa;
+    text-align: center;
+    /* margin-top: 10px; */
+    margin-right: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.wrapper .upload-wrapper {
+    display: inline-block;
+    margin: 2rem auto 0;
+}
+
+h1,
+h2 {
+    /* color: #fff; */
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.3em;
+}
+
+/* ------------------------------ Upload button styling ------------------------------ */
+.upload {
+    --color-black-softest: #485461;
+    /* softer black */
+    --color-black-soft: #363f48;
+    /* softer black */
+    --color-black-hard: #2d353c;
+    /* harder black */
+    --color-black-hardest: #21282e;
+    /* hardest black */
+    --color-light: rgba(85, 87, 255, 0.78);
+    /* light green */
+    --color: #056bfa;
+    /* medium green */
+    --ease-in-out-quartic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+    display: inline-flex;
+    background: #485461;
+    border-radius: 10px;
+    box-shadow: 0 1.7px 1.4px rgba(0, 0, 0, 0.02), 0 4px 3.3px rgba(0, 0, 0, 0.028), 0 7.5px 6.3px rgba(0, 0, 0, 0.035), 0 13.4px 11.2px rgba(0, 0, 0, 0.042), 0 25.1px 20.9px rgba(0, 0, 0, 0.05), 0 60px 50px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transform: rotate(0);
+}
+
+.upload-info {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    margin-right: 40px;
+    fill: #fff;
+    color: #fff;
+    /* border: 2px solid red; */
+}
+
+.upload-filename {
+    padding-left: 8px;
+    transition: opacity 300ms ease;
+}
+
+.upload-filename.inactive {
+    opacity: 0.6;
+}
+
+.upload-button {
+    /* width: 150px; */
+    /* border: 2px solid red; */
+    position: relative;
+    margin: 0;
+    font-size: 100%;
+    padding: 0 8px;
+    font-family: inherit;
+    background: none;
+    border: none;
+    border-radius: inherit;
+    outline: none;
+}
+
+.upload-button-text {
+    padding: 8px 16px;
+    color: white;
+    background-color: var(--color);
+    border-radius: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 200ms ease, box-shadow 300ms ease;
+}
+
+.upload-button-text:hover,
+.upload-button-text:focus {
+    background-color: var(--color-light);
+}
+
+.upload-button-text.inactive {
+    background-color: rgba(255, 255, 255, 0.38);
+    cursor: not-allowed;
+}
+
+.upload-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transform: translateY(100%);
+}
+
+.upload-progress {
+    position: absolute;
+    top: 90%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: var(--color-light);
+    transform-origin: left;
+}
+
+.upload.uploading .upload-button-text {
+    animation: fade-up-out 0.4s 0.4s forwards, button-pulse 500ms forwards;
+}
+
+.upload.uploading .upload-info>* {
+    animation: fade-up-out 0.4s 0.4s forwards;
+}
+
+.upload.uploading .upload-hint {
+    animation: fade-up-in 0.4s 0.8s forwards;
+}
+
+.upload.uploading .upload-progress {
+    animation: load-right 2s 1s var(--ease-in-out-quartic) forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes button-pulse {
+    from {
+        box-shadow: 0 0 0 0 var(--color-light);
+    }
+
+    to {
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes fade-up-out {
+    to {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+}
+
+@keyframes fade-up-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes load-right {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+    cursor: pointer;
+}
+
+.drop-area {
+    border: 1px solid var(--color-black-softest);
+}
+
+.drop-area.droppable {
+    border: 1px dashed rgba(255, 255, 255, 0.6);
+}
+
+.drop-area.highlight {
+    border: 1px dashed var(--color);
+}
+
+
+@media (max-width: 357px) {
+    .upload-button-text {
+        padding: 8px 8px;
+    }
+
+    .upload-info {
+        width: 100px;
+        padding: 10px;
+    }
+
+    .upload-filename {
+        padding-left: 5px;
+    }
+}
